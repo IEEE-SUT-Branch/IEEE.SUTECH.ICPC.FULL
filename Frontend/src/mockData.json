@@ -1,0 +1,15 @@
+{
+  "users": [
+    { "email": "john@mail.com",  "password": "Changeme1" },
+    { "email": "maria@mail.com", "password": "Changeme1" },
+    { "email": "ahmed@mail.com", "password": "Changeme1" }
+  ],
+  "loginResponse": {
+    "message": "Login successful!",
+    "user": {
+      "id": 1,
+      "name": "John",
+      "email": "john@mail.com"
+    }
+  }
+}

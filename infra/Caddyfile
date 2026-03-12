@@ -1,0 +1,15 @@
+{$DOMAIN} {
+  encode gzip zstd
+
+  reverse_proxy frontend:80
+
+  header {
+    X-Frame-Options "SAMEORIGIN"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    -Server
+  }
+
+  tls {$LETSENCRYPT_EMAIL}
+}

@@ -1,0 +1,34 @@
+\begin{problem}{Valid ECPC Password}{standard input}{standard output}{1 second}{256 megabytes}
+
+To access the SUTech Arena, a student must create a strong password. A password $P$ is considered strong if and only if it satisfies all the following conditions:
+
+Its length is at least 8 characters.
+
+It contains at least one uppercase English letter.
+
+It contains at least one lowercase English letter.
+
+It contains at least one digit (0-9).
+
+No two adjacent characters are identical.
+
+Given a string $P$, output YES if it is a strong password, and NO otherwise.
+
+\InputFile
+A single line containing the string $P$ ($1 \le |P| \le 100$). The string consists only of alphanumeric characters.
+
+\OutputFile
+Print YES if the password is strong, or NO otherwise.
+
+\Examples
+
+\begin{example}
+\exmpfile{example.01}{example.01.a}%
+\exmpfile{example.02}{example.02.a}%
+\end{example}
+
+\Note
+Iterate through the string. Keep boolean flags for lowercase, uppercase, and digit. Also check P[i] == P[i-1]
+
+\end{problem}
+

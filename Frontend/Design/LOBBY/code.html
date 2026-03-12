@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUTech Annual Programming Contest 2026 - Waiting Lobby</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006199",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/10 bg-white dark:bg-slate-900 px-6 py-4 lg:px-20">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div>
+<h1 class="text-primary text-xl font-bold leading-tight tracking-tight">SUTech Annual Programming Contest 2026</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">Official Competition Portal</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex flex-col items-end mr-2">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Alex Rivers</p>
+<p class="text-xs text-slate-500">ID: 2026-ST-8842</p>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12 max-w-5xl mx-auto w-full">
+<!-- Countdown Section -->
+<div class="w-full text-center mb-12">
+<h2 class="text-slate-500 dark:text-slate-400 text-lg font-medium mb-6 uppercase tracking-[0.2em]">The contest begins in</h2>
+<div class="flex justify-center gap-4 md:gap-8">
+<div class="flex flex-col items-center">
+<div class="flex h-24 w-24 md:h-32 md:w-32 items-center justify-center rounded-xl bg-white dark:bg-slate-800 border-b-4 border-primary shadow-sm">
+<span class="text-4xl md:text-6xl font-bold text-primary">00</span>
+</div>
+<p class="mt-3 text-sm font-semibold text-slate-500 uppercase tracking-widest">Hours</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="flex h-24 w-24 md:h-32 md:w-32 items-center justify-center rounded-xl bg-white dark:bg-slate-800 border-b-4 border-primary shadow-sm">
+<span class="text-4xl md:text-6xl font-bold text-primary">14</span>
+</div>
+<p class="mt-3 text-sm font-semibold text-slate-500 uppercase tracking-widest">Minutes</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="flex h-24 w-24 md:h-32 md:w-32 items-center justify-center rounded-xl bg-white dark:bg-slate-800 border-b-4 border-primary shadow-sm">
+<span class="text-4xl md:text-6xl font-bold text-primary">25</span>
+</div>
+<p class="mt-3 text-sm font-semibold text-slate-500 uppercase tracking-widest">Seconds</p>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+<!-- Left: Rules & Instructions -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2 mb-6 text-primary">
+<span class="material-symbols-outlined">gavel</span>
+<h3 class="text-xl font-bold">Contest Instructions &amp; Anti-Cheating Rules</h3>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 p-4 rounded-lg bg-background-light dark:bg-slate-800/50 border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mt-1">tab_unselected</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Environment Lockdown</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">The browser must remain in focus. Tab switching or minimizing the window will trigger an immediate disqualification warning.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg bg-background-light dark:bg-slate-800/50 border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mt-1">smart_toy</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Zero AI Assistance</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Use of ChatGPT, GitHub Copilot, or any other AI-based code generation tools is strictly prohibited.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg bg-background-light dark:bg-slate-800/50 border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mt-1">group_off</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Solo Performance</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">No communication with other participants or external entities during the 4-hour session.</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="relative flex items-center h-6">
+<input class="h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary transition-all cursor-pointer" type="checkbox"/>
+</div>
+<span class="text-slate-700 dark:text-slate-300 font-medium group-hover:text-primary transition-colors">
+                                    I have read, understood, and agree to abide by all the anti-cheating rules mentioned above.
+                                </span>
+</label>
+</div>
+</div>
+</div>
+<!-- Right: Status Panel -->
+<div class="flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Connection Status</h3>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30">
+<div class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</div>
+<span class="text-sm font-medium text-primary">Waiting for server to start...</span>
+</div>
+<div class="mt-6 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Network Latency</span>
+<span class="font-mono text-green-600 font-bold">24ms</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Security Module</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Verified</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Camera Check</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Active</span>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-xl border border-primary/20">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-lg">info</span>
+<p class="text-sm font-bold uppercase">Proctor Note</p>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                            "Please ensure your environment is quiet and your workspace is clear of any unauthorized materials before the session begins."
+                        </p>
+</div>
+<button class="w-full py-4 px-6 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 font-bold text-lg cursor-not-allowed flex items-center justify-center gap-2 transition-all" disabled="">
+<span class="material-symbols-outlined">play_circle</span>
+                        Enter Arena
+                    </button>
+<p class="text-[10px] text-center text-slate-400 uppercase tracking-tighter">Button will enable when server starts</p>
+</div>
+</div>
+</main>
+<!-- Footer Decor -->
+<footer class="mt-auto py-8 text-center border-t border-slate-200 dark:border-slate-800">
+<div class="flex justify-center gap-8 items-center">
+<div class="h-[1px] w-12 bg-slate-300 dark:bg-slate-700"></div>
+<p class="text-xs text-slate-500 font-medium tracking-widest">POWERED BY SUTECH SYSTEMS</p>
+<div class="h-[1px] w-12 bg-slate-300 dark:bg-slate-700"></div>
+</div>
+</footer>
+</div>
+</body></html>

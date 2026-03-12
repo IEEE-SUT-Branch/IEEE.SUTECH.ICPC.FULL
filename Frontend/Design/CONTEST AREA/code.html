@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUTech Arena - Contest #42</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006199",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .editor-bg { background-color: #1e1e1e; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-hidden h-screen flex flex-col">
+<!-- Header Component -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-slate-900 px-6 py-3 h-16 shrink-0">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-primary">SUTech Arena</h2>
+</div>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 rounded-full border border-green-200 dark:border-green-800">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-sm">timer</span>
+<span class="text-green-700 dark:text-green-400 font-bold text-sm tabular-nums">59:23</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Online</span>
+</div>
+<div class="flex items-center gap-3 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+<div class="text-right">
+<p class="text-xs font-bold leading-none">Ahmed Ali</p>
+<p class="text-[10px] text-slate-500 leading-none mt-1">2024001</p>
+</div>
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="Ahmed Ali Profile Avatar" data-alt="Student profile avatar with glasses and a friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-hCa1RrP4YS3GULCYEvAPqV-8L98QmTZ9GFjn4T2M7BF3Sn1P-Y3jrS8Xt6jtHYtHSufmMZ1Jtkd6PYg0nue_Pr-RERzmjoPNErHPI8hAYFSPM9qi_DNMyTkCUUPLzF5PMSs9R0mDpD6ulO9pfonFCN5HFeuzONbUjJY7ff66cNAqPfiZcAqQNns7Ueo_gd3ss3TLsR3Ovu10Ws4RyCZh8daRoGL49f0p5c9mH5fP8MhtZ1aC2QikfQ1N5fO6ycVAPrB9EJZTFdB6"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Pane: Problem Statement -->
+<section class="w-1/2 flex flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<!-- Problem Tabs -->
+<nav class="flex border-b border-slate-200 dark:border-slate-800">
+<button class="flex-1 py-3 px-4 border-b-2 border-primary bg-primary/5 flex flex-col items-center gap-1 transition-colors">
+<span class="text-xs font-bold text-primary">Problem A</span>
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+</button>
+<button class="flex-1 py-3 px-4 border-b-2 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800 flex flex-col items-center gap-1 text-slate-400">
+<span class="text-xs font-bold">Problem B</span>
+<span class="material-symbols-outlined text-amber-500 text-base">warning</span>
+</button>
+<button class="flex-1 py-3 px-4 border-b-2 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800 flex flex-col items-center gap-1 text-slate-400">
+<span class="text-xs font-bold">Problem C</span>
+<span class="material-symbols-outlined text-slate-300 text-base">circle</span>
+</button>
+<button class="flex-1 py-3 px-4 border-b-2 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800 flex flex-col items-center gap-1 text-slate-400">
+<span class="text-xs font-bold">Problem D</span>
+<span class="material-symbols-outlined text-slate-300 text-base">circle</span>
+</button>
+<button class="flex-1 py-3 px-4 border-b-2 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800 flex flex-col items-center gap-1 text-slate-400">
+<span class="text-xs font-bold">Problem E</span>
+<span class="material-symbols-outlined text-slate-300 text-base">circle</span>
+</button>
+</nav>
+<!-- Problem Content Scrollable -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+<div class="max-w-2xl mx-auto">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h1 class="text-3xl font-bold mb-2">A. Maximum Subarray Sum</h1>
+<div class="flex gap-4 text-sm text-slate-500 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> Time limit: 1.0s</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">memory</span> Memory limit: 256MB</span>
+</div>
+</div>
+<button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</button>
+</div>
+<div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+<p class="mb-4">Given an array of $n$ integers, your task is to find the maximum sum of values in a contiguous, non-empty subarray.</p>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mt-6 mb-2">Input</h3>
+<p class="mb-4">The first input line has an integer $n$: the size of the array. The second line has $n$ integers $x_1, x_2, \dots, x_n$: the contents of the array.</p>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mt-6 mb-2">Output</h3>
+<p class="mb-4">Print one integer: the maximum subarray sum.</p>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mt-6 mb-2">Constraints</h3>
+<ul class="list-disc pl-5 mb-6 space-y-1">
+<li>$1 \le n \le 2 \cdot 10^5$</li>
+<li>$-10^9 \le x_i \le 10^9$</li>
+</ul>
+<!-- Sample Input/Output -->
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Sample Input</span>
+<button class="text-xs text-primary font-bold hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy
+                                    </button>
+</div>
+<pre class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg font-mono text-sm border border-slate-200 dark:border-slate-700">8
+-1 3 -2 5 3 -5 2 2</pre>
+</div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Sample Output</span>
+<button class="text-xs text-primary font-bold hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy
+                                    </button>
+</div>
+<pre class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg font-mono text-sm border border-slate-200 dark:border-slate-700">9</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Pane: Code Editor -->
+<section class="w-1/2 flex flex-col bg-slate-50 dark:bg-slate-950">
+<!-- Editor Toolbar -->
+<div class="h-12 flex items-center justify-between px-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="flex items-center gap-4">
+<div class="relative">
+<select class="appearance-none bg-slate-100 dark:bg-slate-800 border-none text-xs font-bold rounded-lg px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary/50 cursor-pointer">
+<option>C++ (G++ 20)</option>
+<option>Python 3.10</option>
+<option>Java 17</option>
+<option>Rust 1.65</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-sm pointer-events-none">expand_more</span>
+</div>
+<button class="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span> Settings
+                    </button>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Code Editor Placeholder -->
+<div class="flex-1 flex overflow-hidden relative">
+<div class="w-12 bg-slate-100 dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-4 text-[10px] font-mono text-slate-400 select-none">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+</div>
+<div class="flex-1 editor-bg p-4 font-mono text-sm text-slate-300 overflow-auto custom-scrollbar">
+<p class="text-slate-500 italic mb-2">// Problem A: Maximum Subarray Sum</p>
+<p><span class="text-primary">#include</span> <span class="text-orange-400">&lt;iostream&gt;</span></p>
+<p><span class="text-primary">#include</span> <span class="text-orange-400">&lt;vector&gt;</span></p>
+<p><span class="text-primary">#include</span> <span class="text-orange-400">&lt;algorithm&gt;</span></p>
+<p class="my-2"><span class="text-primary">using namespace</span> <span class="text-yellow-400">std</span>;</p>
+<p><span class="text-primary">int</span> <span class="text-blue-400">main</span>() {</p>
+<p class="ml-4"> <span class="text-primary">int</span> n;</p>
+<p class="ml-4">    cin &gt;&gt; n;</p>
+<p class="ml-4">    vector&lt;<span class="text-primary">long long</span>&gt; x(n);</p>
+<p class="ml-4"> <span class="text-primary">for</span> (<span class="text-primary">int</span> i = <span class="text-purple-400">0</span>; i &lt; n; ++i) cin &gt;&gt; x[i];</p>
+<p class="my-2 ml-4"> <span class="text-primary">long long</span> ms = -<span class="text-purple-400">1e18</span>, cur = <span class="text-purple-400">0</span>;</p>
+<p class="ml-4"> <span class="text-primary">for</span> (<span class="text-primary">auto</span> i : x) {</p>
+<p class="ml-8">        cur = max(i, cur + i);</p>
+<p class="ml-8">        ms = max(ms, cur);</p>
+<p class="ml-4">    }</p>
+<p class="ml-4">    cout &lt;&lt; ms &lt;&lt; endl;</p>
+<p class="ml-4"> <span class="text-primary">return</span> <span class="text-purple-400">0</span>;</p>
+<p>}</p>
+<div class="h-px w-4 bg-primary/50 absolute left-14 top-[244px]"></div>
+</div>
+</div>
+<!-- Bottom Console / Status -->
+<div class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<!-- Minimize/Expand Handle -->
+<div class="h-8 flex items-center justify-between px-4 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-slate-400 group-hover:text-primary">terminal</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Execution Results</span>
+</div>
+<span class="material-symbols-outlined text-lg text-slate-400">keyboard_arrow_up</span>
+</div>
+<!-- Verdict Banner (Mini) -->
+<div class="px-4 py-3 bg-green-50 dark:bg-green-900/10 border-t border-green-100 dark:border-green-900/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 fill-1">check_circle</span>
+<div>
+<span class="text-sm font-bold text-green-700 dark:text-green-400">Accepted</span>
+<span class="text-xs text-green-600 dark:text-green-500/80 ml-2">All tests passed (120ms, 4.2MB)</span>
+</div>
+</div>
+<button class="text-xs font-bold text-green-700 dark:text-green-400 hover:underline">View Details</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer / Action Bar -->
+<footer class="h-14 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 rounded-lg transition-all">
+<span class="material-symbols-outlined">question_mark</span> Clarifications
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 rounded-lg transition-all">
+<span class="material-symbols-outlined">history</span> My Submissions
+            </button>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2 text-sm font-bold text-primary border border-primary/20 hover:bg-primary/5 rounded-lg transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">play_arrow</span> Run Tests
+            </button>
+<button class="px-8 py-2 text-sm font-bold text-white bg-primary hover:bg-primary/90 rounded-lg shadow-sm shadow-primary/20 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">send</span> Submit Solution
+            </button>
+</div>
+</footer>
+</body></html>

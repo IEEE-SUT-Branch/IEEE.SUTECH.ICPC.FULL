@@ -1,0 +1,30 @@
+\begin{problem}{Sutech Apples}{standard input}{standard output}{1 second}{256 megabytes}
+
+The IEEE SUTech branch is organizing a welcome event for the students who registered for the upcoming ECPC qualifications. To keep everyone energetic during the contest, the organizing committee decided to distribute fresh apples.
+
+There are $N$ students standing in a line. The $i$-th student requested exactly $A_i$ apples. However, the committee has a strict fairness policy: any student who asks for strictly more than $X$ apples is considered greedy and will be penalized by receiving exactly $0$ apples. All other students (who asked for $X$ apples or fewer) will receive exactly the number of apples they requested.
+
+Your task is to write a program that calculates the total number of apples the committee needs to distribute to all $N$ students
+
+
+\InputFile
+
+The first line of the input contains two space-separated integers $N$ and $X$ ($1 \le N \le 100$, $1 \le X \le 100$) --- the number of students and the maximum allowed apples per student, respectively.
+The second line contains $N$ space-separated integers $A_1, A_2, \dots, A_N$ ($1 \le A_i \le 100$) --- where $A_i$ is the number of apples requested by the $i$-th student.
+
+\OutputFile
+Print a single integer representing the total number of apples the committee will distribute.
+
+\Example
+
+\begin{example}
+\exmpfile{example.01}{example.01.a}%
+\end{example}
+
+\Note
+Iterate through the array. For each element $A_i$, if $A_i \le X$, add $A_i$ to a running sum variable. Finally, print the sum.
+Time Complexity: $O(N)$
+Space Complexity: $O(1)$ or $O(N)$ depending on input reading method.
+
+\end{problem}
+

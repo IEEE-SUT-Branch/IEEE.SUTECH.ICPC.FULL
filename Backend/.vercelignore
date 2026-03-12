@@ -1,0 +1,8 @@
+node_modules
+logs
+uploads
+test-cases
+tests
+*.log
+.env
+students.csv

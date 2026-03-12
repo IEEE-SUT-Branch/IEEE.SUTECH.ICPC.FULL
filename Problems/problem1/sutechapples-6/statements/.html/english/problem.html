@@ -1,0 +1,22 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>Sutech Apples</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">Sutech Apples</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P>The IEEE SUTech branch is organizing a welcome event for the students who registered for the upcoming ECPC qualifications. To keep everyone energetic during the contest, the organizing committee decided to distribute fresh apples.</P><P>There are $$$N$$$ students standing in a line. The $$$i$$$-th student requested exactly $$$A_i$$$ apples. However, the committee has a strict fairness policy: any student who asks for strictly more than $$$X$$$ apples is considered greedy and will be penalized by receiving exactly $$$0$$$ apples. All other students (who asked for $$$X$$$ apples or fewer) will receive exactly the number of apples they requested.</P><P>Your task is to write a program that calculates the total number of apples the committee needs to distribute to all $$$N$$$ students</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>The first line of the input contains two space-separated integers $$$N$$$ and $$$X$$$ ($$$1 \le N \le 100$$$, $$$1 \le X \le 100$$$) &mdash; the number of students and the maximum allowed apples per student, respectively. The second line contains $$$N$$$ space-separated integers $$$A_1, A_2, \dots, A_N$$$ ($$$1 \le A_i \le 100$$$) &mdash; where $$$A_i$$$ is the number of apples requested by the $$$i$$$-th student.</P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>Print a single integer representing the total number of apples the committee will distribute.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Example</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content">
+5 10
+5 12 8 10 15
+</PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+23
+</PRE></DIV></DIV></DIV><P></P><P></P><DIV class="note"><DIV class="section-title">Note</DIV><P></P><P>Iterate through the array. For each element $$$A_i$$$, if $$$A_i \le X$$$, add $$$A_i$$$ to a running sum variable. Finally, print the sum. Time Complexity: $$$O(N)$$$ Space Complexity: $$$O(1)$$$ or $$$O(N)$$$ depending on input reading method.</P></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>

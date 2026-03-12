@@ -1,0 +1,26 @@
+\begin{problem}{Campus Network}{standard input}{standard output}{1 second}{256 megabytes}
+
+The SUTech university campus can be represented as an $R \times C$ grid. The IT department wants to lay an internet cable from the Main Server located at $(1, 1)$ to Lab 7 located at $(R, C)$.
+Some cells in the grid represent buildings (#) and cannot be passed through. Empty spaces are represented by (.).
+You can move up, down, left, or right. Moving to an adjacent cell takes 1 minute.
+Find the minimum time required to reach Lab 7 from the Main Server. If it is impossible to reach Lab 7, output -1.
+
+\InputFile
+The first line contains two integers $R$ and $C$ ($1 \le R, C \le 1000$).
+The next $R$ lines contain $C$ characters each, either . or #.
+It is guaranteed that $(1,1)$ and $(R,C)$ are always ..
+
+\OutputFile
+Print the minimum time to reach $(R,C)$, or -1 if it's impossible.
+
+\Example
+
+\begin{example}
+\exmpfile{example.01}{example.01.a}%
+\end{example}
+
+\Note
+This requires Breadth-First Search (BFS) on a 2D grid. The shortest path in an unweighted graph. Time Complexity $O(R \times C)$. This will easily distinguish the top-tier competitive programmers.
+
+\end{problem}
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECPC Placement Test Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header {
+            background-color: #00629B; /* IEEE Blue */
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: 600;
+            color: #00629B;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #00629B;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .important-notice {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: #856404;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .details-table th, .details-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eeeeee;
+            text-align: left;
+        }
+        .details-table th {
+            width: 40%;
+            color: #666666;
+            font-weight: 600;
+            background-color: #fcfcfc;
+        }
+        .details-table td {
+            font-weight: 500;
+        }
+        .rules-list {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .rules-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #777777;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IEEE SUTech Student Branch</h1>
+            <p>Competitive Programming Division</p>
+            <p style="font-size: 18px; margin-top: 5px; font-weight: bold;">ECPC Qualification - Stage 1</p>
+        </div>
+
+        <div class="content">
+            <div class="greeting">Hello, {{fullName}}</div>
+            
+            <p>You are officially registered for the <strong>SUTech ECPC Placement Test 2026 (Stage 1)</strong>. Please review your assigned lab, time, and login credentials carefully.</p>
+
+            <div class="important-notice">
+                <strong>⚠️ Important Notes:</strong>
+                <ul style="margin-top: 8px; margin-bottom: 0; padding-left: 20px;">
+                    <li><strong>Arrival Time:</strong> You must arrive at your assigned lab <strong>at least 10 to 15 minutes early</strong> to ensure your setup is ready before the test begins.</li>
+                    <li><strong>Performance Assessment:</strong> This Stage 1 test is solely a performance measurement assessment to evaluate your current problem-solving skills, <strong>not a competitive contest</strong>. There will be subsequent stages.</li>
+                    <li><strong>No Retakes:</strong> Attendance is strictly mandatory. There will be <strong>NO makeup tests or retakes</strong> for absentees under any circumstances.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3 style="margin-top: 0; color: #00629B; border-bottom: 1px solid #dee2e6; padding-bottom: 10px;">Your Test Details</h3>
+                <table class="details-table">
+                    <tr>
+                        <th>Date & Group</th>
+                        <td>{{testGroup}}</td> 
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <td><strong>11:20 AM to 12:30 PM</strong><br><span style="font-size: 12px; color: #e74c3c;">(Must arrive at least 10-15 mins early)</span></td>
+                    </tr>
+                    <tr>
+                        <th>Assigned Lab</th>
+                        <td><strong>{{labAssignment}}</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Platform</th>
+                        <td><a href="https://ieee.reca-tech.com" style="color: #00629B; text-decoration: none;">https://ieee.reca-tech.com</a></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td>{{email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Password</th>
+                        <td><em>Will be announced by your proctor in the lab</em></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 style="color: #00629B; margin-top: 30px;">Contest Structure & Rules</h3>
+            <ul class="rules-list">
+                <li><strong>Duration:</strong> 60 minutes.</li>
+                <li><strong>Problems:</strong> 5 Problems to solve.</li>
+                <li><strong>Languages:</strong> C++, Python, Java.</li>
+                <li>Full-screen mode is <strong>mandatory</strong> — exiting triggers a system warning.</li>
+                <li>Copy/Paste from external sources is <strong>strictly blocked</strong>.</li>
+                <li>All submissions are automatically checked for <strong>plagiarism</strong>.</li>
+            </ul>
+
+            <p style="margin-top: 30px; border-top: 1px solid #eeeeee; padding-top: 20px;">Questions or issues? Reach us at <a href="mailto:IEEE.SUTech@sut.edu.eg" style="color: #00629B;">IEEE.SUTech@sut.edu.eg</a></p>
+        </div>
+
+        <div class="footer">
+            <p><strong>IEEE SUTech Student Branch</strong><br>El Sewedy University of Technology · 2026</p>
+            <p style="font-size: 11px; opacity: 0.7;">Automated message — please do not reply</p>
+        </div>
+    </div>
+</body>
+</html>

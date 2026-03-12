@@ -1,0 +1,372 @@
+{{!-- src/templates/placementTest.hbs --}}
+{{!--
+  EMAIL-SAFE HTML
+  - All styles inline (Gmail/Outlook strip <style> tags)
+  - Table-based layout (no flexbox/grid in emails)
+  - MSO conditionals for Outlook rendering
+  - Tested: Gmail · Outlook · Apple Mail · Yahoo
+--}}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>ECPC Placement Test — IEEE SUTech</title>
+  <!--[if mso]>
+  <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+  <![endif]-->
+</head>
+
+<body style="margin:0;padding:0;background-color:#e8edf4;font-family:'Segoe UI',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;">
+
+  {{!-- Hidden preview text --}}
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+    Your ECPC Placement Test credentials — IEEE SUTech Student Branch
+  </div>
+
+  {{!-- ══════════════ OUTER WRAPPER ══════════════ --}}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e8edf4;">
+    <tr>
+      <td align="center" style="padding:32px 16px;">
+
+        {{!-- ══════════════ MAIN CARD ══════════════ --}}
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
+          style="max-width:600px;width:100%;background-color:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,48,135,0.12);">
+
+          {{!-- ══════ HEADER ══════ --}}
+          <tr>
+            <td style="background-color:#003087;padding:0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+
+                {{!-- Top accent bar --}}
+                <tr>
+                  <td style="background-color:#00A9E0;height:5px;font-size:0;line-height:0;">&nbsp;</td>
+                </tr>
+
+                {{!-- Logo + Title --}}
+                <tr>
+                  <td style="padding:28px 40px 24px 40px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        {{!-- Logo --}}
+                        <td style="vertical-align:middle;width:130px;">
+                          <img
+                            src="{{logoUrl}}"
+                            alt="IEEE SUTech"
+                            width="120"
+                            style="display:block;width:120px;height:auto;border:0;"
+                          />
+                        </td>
+                        {{!-- Divider --}}
+                        <td style="width:24px;" width="24">&nbsp;</td>
+                        <td style="vertical-align:middle;border-left:1px solid rgba(255,255,255,0.2);padding-left:24px;">
+                          <div style="font-size:13px;font-weight:700;color:#00A9E0;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">
+                            IEEE SUTech Student Branch
+                          </div>
+                          <div style="font-size:26px;font-weight:700;color:#ffffff;line-height:1.2;">
+                            ECPC Placement Test
+                          </div>
+                          <div style="font-size:15px;color:rgba(255,255,255,0.6);margin-top:5px;">
+                            Competitive Programming Division
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                {{!-- Date + Group bar --}}
+                <tr>
+                  <td style="background-color:rgba(0,0,0,0.28);padding:13px 40px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td>
+                          <span style="font-size:13px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:1.5px;">
+                            Test Date &nbsp;/
+                          </span>
+                          <span style="font-size:16px;font-weight:700;color:#ffffff;margin-left:6px;">
+                            {{testDate}}
+                          </span>
+                        </td>
+                        <td align="right">
+                          <span style="background-color:#00A9E0;color:#ffffff;font-size:13px;font-weight:700;padding:5px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;">
+                            {{testGroup}}
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          {{!-- ══════ GREETING ══════ --}}
+          <tr>
+            <td style="padding:36px 40px 20px 40px;">
+              <div style="font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:12px;">
+                Hello, {{studentName}}
+              </div>
+              <div style="font-size:17px;color:#4a5568;line-height:1.8;">
+                You are officially registered for the&nbsp;
+                <strong style="color:#003087;">SUTech ECPC Placement Test 2026 (Stage 1)</strong>.
+                Please review your assigned lab and login credentials carefully before the test.
+              </div>
+            </td>
+          </tr>
+
+          {{!-- ══════ CREDENTIALS CARD ══════ --}}
+          <tr>
+            <td style="padding:0 40px 24px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                style="border:1.5px solid #003087;border-radius:12px;overflow:hidden;">
+
+                {{!-- Card header --}}
+                <tr>
+                  <td colspan="2" style="background-color:#003087;padding:12px 20px;">
+                    <span style="font-size:13px;font-weight:700;color:#ffffff;text-transform:uppercase;letter-spacing:2px;">
+                      Your Test Details
+                    </span>
+                  </td>
+                </tr>
+
+                {{!-- Username --}}
+                <tr>
+                  <td style="padding:16px 20px 10px 20px;width:36%;vertical-align:middle;">
+                    <span style="font-size:13px;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:1px;">Username</span>
+                  </td>
+                  <td style="padding:16px 20px 10px 20px;vertical-align:middle;">
+                    <span style="font-size:17px;font-weight:700;color:#003087;word-break:break-all;font-family:'Courier New',Courier,monospace;">
+                      {{loginUsername}}
+                    </span>
+                  </td>
+                </tr>
+
+                <tr><td colspan="2" style="padding:0 20px;"><div style="border-top:1px solid #e2e8f0;"></div></td></tr>
+
+                {{!-- Password --}}
+                <tr>
+                  <td style="padding:10px 20px;width:36%;vertical-align:middle;">
+                    <span style="font-size:13px;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:1px;">Password</span>
+                  </td>
+                  <td style="padding:10px 20px;vertical-align:middle;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="background-color:#fffbeb;border:1px solid #f59e0b;border-radius:6px;padding:7px 14px;">
+                          <span style="font-size:15px;color:#92400e;font-weight:600;">
+                            Will be announced at the start by your lab proctor
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr><td colspan="2" style="padding:0 20px;"><div style="border-top:1px solid #e2e8f0;"></div></td></tr>
+
+                {{!-- Assigned Lab --}}
+                <tr>
+                  <td style="padding:10px 20px;width:36%;vertical-align:middle;">
+                    <span style="font-size:13px;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:1px;">Assigned Lab</span>
+                  </td>
+                  <td style="padding:10px 20px;vertical-align:middle;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="background-color:#003087;border-radius:6px;padding:6px 18px;">
+                          <span style="font-size:16px;font-weight:700;color:#ffffff;">
+                            {{labAssignment}}
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr><td colspan="2" style="padding:0 20px;"><div style="border-top:1px solid #e2e8f0;"></div></td></tr>
+
+                {{!-- Time --}}
+                <tr>
+                  <td style="padding:10px 20px;width:36%;vertical-align:middle;">
+                    <span style="font-size:13px;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:1px;">Time</span>
+                  </td>
+                  <td style="padding:10px 20px;vertical-align:middle;">
+                    <span style="font-size:17px;font-weight:700;color:#003087;">11:20 AM &mdash; 12:30 PM</span>
+                    <br>
+                    <span style="font-size:13px;color:#e53e3e;">(Arrive at least 10&ndash;15 mins early)</span>
+                  </td>
+                </tr>
+
+                <tr><td colspan="2" style="padding:0 20px;"><div style="border-top:1px solid #e2e8f0;"></div></td></tr>
+
+                {{!-- Platform URL --}}
+                <tr>
+                  <td style="padding:10px 20px 16px 20px;width:36%;vertical-align:middle;">
+                    <span style="font-size:13px;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:1px;">Platform</span>
+                  </td>
+                  <td style="padding:10px 20px 16px 20px;vertical-align:middle;">
+                    <a href="{{platformUrl}}" style="font-size:16px;font-weight:600;color:#00A9E0;text-decoration:none;">
+                      {{platformUrl}}
+                    </a>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          {{!-- ══════ STATS ROW ══════ --}}
+          <tr>
+            <td style="padding:0 40px 28px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="33%" style="padding-right:6px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                      style="background-color:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;">
+                      <tr>
+                        <td style="padding:18px 8px;text-align:center;">
+                          <div style="font-size:22px;font-weight:800;color:#003087;">{{testDuration}}</div>
+                          <div style="font-size:12px;font-weight:700;color:#0369a1;text-transform:uppercase;letter-spacing:1px;margin-top:5px;">Duration</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width="34%" style="padding:0 3px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                      style="background-color:#f0fdf4;border:1px solid #86efac;border-radius:10px;">
+                      <tr>
+                        <td style="padding:18px 8px;text-align:center;">
+                          <div style="font-size:22px;font-weight:800;color:#166534;">{{problemCount}} Problems</div>
+                          <div style="font-size:12px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:1px;margin-top:5px;">To Solve</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width="33%" style="padding-left:6px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                      style="background-color:#eff6ff;border:1px solid #93c5fd;border-radius:10px;">
+                      <tr>
+                        <td style="padding:18px 8px;text-align:center;">
+                          <div style="font-size:15px;font-weight:800;color:#1e3a8a;">{{supportedLanguages}}</div>
+                          <div style="font-size:12px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:1px;margin-top:5px;">Languages</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          {{!-- ══════ IMPORTANT NOTES ══════ --}}
+          <tr>
+            <td style="padding:0 40px 24px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                style="background-color:#fffbeb;border-left:4px solid #f59e0b;border-radius:0 10px 10px 0;">
+                <tr>
+                  <td style="padding:20px 24px;">
+                    <div style="font-size:14px;font-weight:700;color:#78350f;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;">
+                      &#9888;&#65039; Important Notes
+                    </div>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tr>
+                        <td style="padding:4px 0;vertical-align:top;width:16px;color:#d97706;font-weight:700;">›</td>
+                        <td style="padding:4px 0;font-size:16px;color:#78350f;line-height:1.7;">
+                          <strong>Performance Assessment:</strong> This is a measurement test — <strong>not a competitive contest</strong>. There will be subsequent stages.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;vertical-align:top;width:16px;color:#d97706;font-weight:700;">›</td>
+                        <td style="padding:4px 0;font-size:16px;color:#78350f;line-height:1.7;">
+                          <strong>No Retakes:</strong> Attendance is mandatory. There will be <strong>NO makeup tests</strong> under any circumstances.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          {{!-- ══════ RULES ══════ --}}
+          <tr>
+            <td style="padding:0 40px 24px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                style="background-color:#fff5f5;border-left:4px solid #e53e3e;border-radius:0 10px 10px 0;">
+                <tr>
+                  <td style="padding:20px 24px;">
+                    <div style="font-size:14px;font-weight:700;color:#c53030;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;">
+                      Contest Rules
+                    </div>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tr>
+                        <td style="padding:4px 0;vertical-align:top;width:16px;color:#e53e3e;font-weight:700;">›</td>
+                        <td style="padding:4px 0;font-size:16px;color:#742a2a;line-height:1.7;"><strong>Duration:</strong> 60 minutes &nbsp;|&nbsp; <strong>Problems:</strong> 5 to solve.</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;vertical-align:top;width:16px;color:#e53e3e;font-weight:700;">›</td>
+                        <td style="padding:4px 0;font-size:16px;color:#742a2a;line-height:1.7;">Full-screen mode is <strong>mandatory</strong> — exiting triggers a system warning.</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;vertical-align:top;width:16px;color:#e53e3e;font-weight:700;">›</td>
+                        <td style="padding:4px 0;font-size:16px;color:#742a2a;line-height:1.7;">Copy/Paste from external sources is <strong>blocked</strong>.</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;vertical-align:top;width:16px;color:#e53e3e;font-weight:700;">›</td>
+                        <td style="padding:4px 0;font-size:16px;color:#742a2a;line-height:1.7;">All submissions are automatically checked for <strong>plagiarism</strong>.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          {{!-- ══════ SUPPORT ══════ --}}
+          <tr>
+            <td style="padding:0 40px 32px 40px;text-align:center;">
+              <span style="font-size:16px;color:#718096;">
+                Questions or issues? Reach us at&nbsp;
+                <a href="mailto:{{supportEmail}}" style="color:#003087;font-weight:700;text-decoration:none;">{{supportEmail}}</a>
+              </span>
+            </td>
+          </tr>
+
+          {{!-- ══════ FOOTER ══════ --}}
+          <tr>
+            <td style="background-color:#003087;padding:22px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td>
+                    <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.9);">
+                      IEEE SUTech Student Branch
+                    </div>
+                    <div style="font-size:13px;color:rgba(255,255,255,0.45);margin-top:3px;">
+                      El Sewedy University of Technology &middot; {{currentYear}}
+                    </div>
+                  </td>
+                  <td align="right">
+                    <div style="font-size:12px;color:rgba(255,255,255,0.35);">
+                      Automated message — please do not reply
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          {{!-- Bottom accent --}}
+          <tr>
+            <td style="background-color:#00A9E0;height:4px;font-size:0;line-height:0;">&nbsp;</td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

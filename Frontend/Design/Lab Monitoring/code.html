@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006199",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                        "surface-dark": "#1a2a33",
+                        "accent-red": "#ef4444",
+                        "accent-yellow": "#f59e0b",
+                        "accent-green": "#10b981",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>SUTech Admin - Lab Monitoring</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex h-screen w-full flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex h-16 items-center justify-between border-b border-primary/20 bg-background-light dark:bg-background-dark px-6">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight">SUTech <span class="text-primary">Admin</span></h1>
+</div>
+<div class="h-8 w-px bg-primary/20"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<h2 class="text-sm font-semibold uppercase tracking-widest text-primary">Lab Monitoring</h2>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="h-10 w-64 rounded-lg border-none bg-primary/5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 dark:bg-primary/10" placeholder="Search students..." type="text"/>
+</div>
+<button class="relative flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-accent-red"></span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary border-2 border-primary/20 overflow-hidden" data-alt="Admin profile avatar placeholder">
+<img alt="Admin" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCToyeE9IJqh_MUQRupLcMgUndhGq92OtpWYwIz7tx1YFnCyKO5wapNj-_kNo-93QCz03mK9MzCFl4CHu1UoNFph6Emm000CTPzAa2s6w2VyvKLVEYwRZQP_Jxu2BM6E9Mlk4cf7qR_5DGDaqRRM-Zyd2rmDf7PQvIFFbPwcSu_V7nob8Q2Vg5bMSIUOqH8ruZkQleZs5RuvvBt1YMVMzZL5P3Ok7FmAnZxgOWolDW0N-S6d328jpAXZNeoVJYdkPSELhi1JWcac8sY"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Sidebar: Lab Selection -->
+<aside class="w-64 border-r border-primary/10 bg-background-light dark:bg-surface-dark/30 p-4">
+<div class="mb-6">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Control Rooms</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 rounded-lg bg-primary px-3 py-2 text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">desktop_windows</span>
+<span class="text-sm font-medium">Lab 5</span>
+<span class="ml-auto text-xs font-bold bg-white/20 px-1.5 py-0.5 rounded">50</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">desktop_windows</span>
+<span class="text-sm font-medium">Lab 6</span>
+<span class="ml-auto text-xs font-bold bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded">50</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">desktop_windows</span>
+<span class="text-sm font-medium">Lab 7</span>
+<span class="ml-auto text-xs font-bold bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded">50</span>
+</a>
+</nav>
+</div>
+<div class="mb-6">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Status Filters</p>
+<div class="space-y-1">
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/10">
+<span class="h-2 w-2 rounded-full bg-accent-green"></span>
+<span class="text-sm">Online</span>
+</button>
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/10">
+<span class="h-2 w-2 rounded-full bg-accent-yellow"></span>
+<span class="text-sm">Idle</span>
+</button>
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/10">
+<span class="h-2 w-2 rounded-full bg-accent-red"></span>
+<span class="text-sm">Offline</span>
+</button>
+</div>
+</div>
+<div class="mt-auto border-t border-primary/10 pt-4">
+<div class="rounded-xl bg-primary/5 p-4">
+<p class="text-xs font-bold text-primary mb-1">System Health</p>
+<p class="text-xs text-slate-500 leading-relaxed">Latency: 12ms</p>
+<p class="text-xs text-slate-500 leading-relaxed">Encryption: AES-256</p>
+</div>
+</div>
+</aside>
+<!-- Main Monitoring Grid -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6">
+<div class="mb-6 flex items-center justify-between">
+<div>
+<h2 class="text-2xl font-bold">Lab 5 <span class="text-slate-400 font-normal">Grid View</span></h2>
+<p class="text-sm text-slate-500">Monitoring 50 active sessions in this lab</p>
+</div>
+<div class="flex items-center gap-2 rounded-lg bg-primary/5 p-1">
+<button class="flex h-8 w-8 items-center justify-center rounded bg-white text-primary shadow-sm dark:bg-primary">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="flex h-8 w-8 items-center justify-center rounded text-slate-500 hover:bg-white dark:hover:bg-primary/20">
+<span class="material-symbols-outlined text-[20px]">list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+<!-- Student Cards (Repeated Examples) -->
+<!-- Active/Selected Student -->
+<div class="group relative flex flex-col gap-3 rounded-xl border-2 border-primary bg-white p-3 shadow-xl dark:bg-surface-dark/50 ring-4 ring-primary/5">
+<div class="relative aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-background-dark" data-alt="Student 101 live screen monitor">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-[10px] font-bold text-white uppercase tracking-tighter">Live Feed - 1080p</span>
+</div>
+<img alt="Monitor 101" class="h-full w-full object-cover grayscale-[30%] brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx1cTzhW4Umc36i5vMC5iIG20Gc7yzX6q8AK8iGBctotEpSlouOM1SKlF_nkQM8fngGwksP2tuzjq6MHEyrX35dGPrmYh8cXYMOB3Kj4e-yqKcb00WQrEuDi0Kf_tI0p8Q3RiCAGdPj-wRRiaGsAdpIdhnrWo2G0eEuwm6CGS0kf3OS5RUlKxfkxY4GFFBWqlSUapwNqBE7PS-oR-2uMUuuB4jeUgRZXD9u8BSr_dk7gNXfINxt10XWncCfE0TfdZNkmaJhAwFqD-E"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-primary">Student 101</p>
+<span class="h-2 w-2 rounded-full bg-accent-green animate-pulse"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5001</p>
+<p class="text-[10px] font-semibold text-accent-green uppercase tracking-wide">Online</p>
+</div>
+<!-- Action Menu Overlay for selected student -->
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2 rounded-lg bg-background-dark p-1.5 shadow-2xl border border-primary/30">
+<button class="flex h-8 w-8 items-center justify-center rounded bg-accent-yellow/10 text-accent-yellow hover:bg-accent-yellow hover:text-white transition-all" title="Send Warning">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</button>
+<button class="flex h-8 w-8 items-center justify-center rounded bg-accent-red/10 text-accent-red hover:bg-accent-red hover:text-white transition-all" title="Add Penalty">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</button>
+<button class="flex h-8 w-8 items-center justify-center rounded bg-slate-800 text-white hover:bg-black transition-all" title="Disqualify">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</div>
+<!-- Idle Student -->
+<div class="group flex flex-col gap-3 rounded-xl border border-primary/10 bg-white p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all dark:bg-surface-dark/50">
+<div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-background-dark" data-alt="Student 102 idle screen monitor">
+<img alt="Monitor 102" class="h-full w-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpCKY6DYFt_CsmVzxNKE433snDIxjU_ZmpXHlpd2O8-gjHijonmdV_btqEjHacrcyXTIiUaj5PYiGnqpTqAvIhKa3szC858jnWl9kur-iO9Xkz7v_AD1kMpIStGiMmB0NXX51aOHrqd-k9BHW9rP8c90HBj6Z9WY7ZhCW-D9pxDD5h-ZoDOcRNuBAmvrCUCz6slMjHsPelV2A94JaC73CLd3nHdLrANEWzMDkqvcVXtLtkgaYceuS9DuN-CFNxgkGQPXcggtE9ZSR4"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold">Student 102</p>
+<span class="h-2 w-2 rounded-full bg-accent-yellow"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5002</p>
+<p class="text-[10px] font-semibold text-accent-yellow uppercase tracking-wide">Idle (2m)</p>
+</div>
+</div>
+<!-- Offline Student -->
+<div class="group flex flex-col gap-3 rounded-xl border border-primary/10 bg-white p-3 shadow-sm opacity-60 dark:bg-surface-dark/50">
+<div class="aspect-video overflow-hidden rounded-lg bg-slate-200 dark:bg-background-dark" data-alt="Student 103 offline screen placeholder">
+<div class="flex h-full w-full items-center justify-center bg-slate-300/20">
+<span class="material-symbols-outlined text-slate-400">desktop_access_disabled</span>
+</div>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold">Student 103</p>
+<span class="h-2 w-2 rounded-full bg-accent-red"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5003</p>
+<p class="text-[10px] font-semibold text-accent-red uppercase tracking-wide">Offline</p>
+</div>
+</div>
+<!-- Generate more grid items for visual density -->
+<div class="group flex flex-col gap-3 rounded-xl border border-primary/10 bg-white p-3 shadow-sm hover:border-primary/40 dark:bg-surface-dark/50">
+<div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-background-dark" data-alt="Student 104 code editor monitor">
+<img alt="Monitor 104" class="h-full w-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9-LAAHgldb-NIQqihnjDVrjc_2WR6IudOTzBLbW_2JJpjWUb29dO5H9oGEHj0VbBHGrx3ELmq0IIQkhmycoapr1HyCtOGpZEQD0eT8kxU4iihnZbS1BJZnioiEaa9sYdnRYuw0D7il5h62smD4HQBJlDFXGZt3qC02zLPpFIUchRldDLFLke8SXoyJD3Xjsg3rfaRHb9hNRH5fi0Xbatyw9C4dxfcHQKb1gkdvzOdkSsmp7MzWdcdyy0NRij9RYFW6EOElUhE1-tU"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold">Student 104</p>
+<span class="h-2 w-2 rounded-full bg-accent-green"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5004</p>
+<p class="text-[10px] font-semibold text-accent-green uppercase tracking-wide">Online</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 rounded-xl border border-primary/10 bg-white p-3 shadow-sm hover:border-primary/40 dark:bg-surface-dark/50">
+<div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-background-dark" data-alt="Student 105 documentation monitor">
+<img alt="Monitor 105" class="h-full w-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrJmWQYlh4hjRoqjUGkugeHDp6VQKHSU49XoAtHNmrse7rKPt2oK_Ir-gb1I_qoH_Fdffc3ZaJ386cMpVBWAufFCT7O7B8CcwhAwebkio6tn6SVfCcY5-DrrY-xdiw6adY2i9A_QB51WSEqd3QbpkNiTv98AF1ifZP1JqcQJSg3dVb3UMvf7i4PTFmNcDWDkTqxOocbCncurr4oCgP6-2YLcLOs0madpMLsMmHYwz7252gmw8cmTY2lq-xpGFkWRNX8TfOoKXa-8wc"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold">Student 105</p>
+<span class="h-2 w-2 rounded-full bg-accent-green"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5005</p>
+<p class="text-[10px] font-semibold text-accent-green uppercase tracking-wide">Online</p>
+</div>
+</div>
+<!-- Additional repeated items to fill grid -->
+<div class="group flex flex-col gap-3 rounded-xl border border-primary/10 bg-white p-3 shadow-sm hover:border-primary/40 dark:bg-surface-dark/50">
+<div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-background-dark" data-alt="Student 106 terminal monitor">
+<img alt="Monitor 106" class="h-full w-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcj8jOd_pve2PQCxSCp_SFQXPwzrysaz6KNMhRsSmgLsqxB1cfxz9geE72qRnqwOD2SqYzV3De3IMkJwttAL2KoPa4sMukvLBlSKtm66B6jaz_0N2fyBaaYnNcDocUs6m_3dwkwEzwT4pdRfdSgZRo3w3ZfyZDcQszYUBMBXURP0_E6B-c0CoMjPnAp-wET7l5rYsSz6rN53u24c3HXInMdKYWGMDlsepwPZ1auH3Hb1f_DU0ZENVi2PHsT3NBq2Qh6bI6z8vKhH5H"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold">Student 106</p>
+<span class="h-2 w-2 rounded-full bg-accent-green"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5006</p>
+<p class="text-[10px] font-semibold text-accent-green uppercase tracking-wide">Online</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 rounded-xl border border-primary/10 bg-white p-3 shadow-sm hover:border-primary/40 dark:bg-surface-dark/50">
+<div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-background-dark" data-alt="Student 107 browser monitor">
+<img alt="Monitor 107" class="h-full w-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7h_Wqin9fUOdZJ4gl4UePZMBYnVfE2B_uIAnfUihK6cWPxpPynlQ2oeeOLBJcErl1oxRzddNp6GrhwlcEoIdKsL2m3VxpoT-fuqg3y1LAQXE526wawWmyzWAZXlTP8RjIpTdYkmH357ZsF-o2mSx3D6txkkpIUvP0-0SS-B7GOuKvBn90vNUtplF33_0DTmBL2wyMU4N3vJzplCv4N0ooi7m5_eGzqKQUI2K34CeIOiFnY3hr3qSIFIa9eMjuEzk09L7JwDpnr-Y"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-accent-red font-bold">Student 107</p>
+<span class="h-2 w-2 rounded-full bg-accent-red animate-ping"></span>
+</div>
+<p class="text-[10px] font-medium text-slate-500">ID: 2024-5007</p>
+<p class="text-[10px] font-semibold text-accent-red uppercase tracking-wide">Flagged</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Sidebar: Anti-Cheat Feed -->
+<aside class="w-80 border-l border-primary/10 bg-background-light dark:bg-surface-dark flex flex-col">
+<div class="p-4 border-b border-primary/10 flex items-center justify-between bg-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-red">security</span>
+<h3 class="text-sm font-bold uppercase tracking-wider">Live Anti-Cheat</h3>
+</div>
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-accent-red text-[10px] font-bold text-white">12</span>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Feed Item: Tab Switched -->
+<div class="relative pl-4 border-l-2 border-accent-yellow py-1 group cursor-pointer hover:bg-primary/5 rounded-r-lg transition-colors">
+<div class="flex items-center justify-between mb-1">
+<p class="text-[10px] font-bold text-accent-yellow uppercase tracking-tighter">Tab Switched</p>
+<p class="text-[10px] text-slate-500">12:44:02</p>
+</div>
+<p class="text-xs leading-tight"><span class="font-bold">Student 104</span> switched to Chrome (External Site)</p>
+<button class="mt-2 text-[10px] font-bold text-primary underline opacity-0 group-hover:opacity-100">View Screen</button>
+</div>
+<!-- Feed Item: Exit Fullscreen -->
+<div class="relative pl-4 border-l-2 border-accent-red py-1 group cursor-pointer hover:bg-primary/5 rounded-r-lg transition-colors">
+<div class="flex items-center justify-between mb-1">
+<p class="text-[10px] font-bold text-accent-red uppercase tracking-tighter">Exit Fullscreen</p>
+<p class="text-[10px] text-slate-500">12:43:55</p>
+</div>
+<p class="text-xs leading-tight"><span class="font-bold">Student 107</span> left the proctored window environment.</p>
+<button class="mt-2 text-[10px] font-bold text-primary underline opacity-0 group-hover:opacity-100">Warn Student</button>
+</div>
+<!-- Feed Item: Large Paste -->
+<div class="relative pl-4 border-l-2 border-primary py-1 group cursor-pointer hover:bg-primary/5 rounded-r-lg transition-colors">
+<div class="flex items-center justify-between mb-1">
+<p class="text-[10px] font-bold text-primary uppercase tracking-tighter">Large Paste</p>
+<p class="text-[10px] text-slate-500">12:41:10</p>
+</div>
+<p class="text-xs leading-tight"><span class="font-bold">Student 101</span> pasted 450+ characters of text.</p>
+<div class="mt-2 flex gap-2 opacity-0 group-hover:opacity-100">
+<button class="text-[10px] font-bold text-primary underline">Compare Code</button>
+<button class="text-[10px] font-bold text-slate-400 underline">Dismiss</button>
+</div>
+</div>
+<!-- Feed Item: Multiple Faces -->
+<div class="relative pl-4 border-l-2 border-accent-red py-1 group cursor-pointer hover:bg-primary/5 rounded-r-lg transition-colors">
+<div class="flex items-center justify-between mb-1">
+<p class="text-[10px] font-bold text-accent-red uppercase tracking-tighter">Multiple Faces</p>
+<p class="text-[10px] text-slate-500">12:38:22</p>
+</div>
+<p class="text-xs leading-tight"><span class="font-bold">Student 089</span> webcam detected more than one person.</p>
+<div class="mt-2 aspect-video bg-background-dark rounded border border-primary/20 overflow-hidden" data-alt="Webcam capture showing multiple face detection">
+<img alt="Capture" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvMWpiQv6wfke8jnynvvRObsIU1ptTXEfd38FHakxJqhf5tMdmPHJIlPKYPukXHrV82wyLdEq0qyeBMis74Bd1akt5MCloxnRv_ziz8H5T4CUPKN9NK3LGdDCyoaTnH1B2zI9pZzPbgzpMNg98_EnAWMwp9LyjoAyB-Rc7_AHWMIykV_xstlrcdNiyngwq5im5s2b2wvz9zF3bmr57TMtl_So_GI0wFbPzTpa7VcwQQgZIH2rCqG6HXIeccgYw3UK5N3w8FydK_kBV"/>
+</div>
+</div>
+<!-- Feed Item: Tab Switched -->
+<div class="relative pl-4 border-l-2 border-accent-yellow py-1 group cursor-pointer hover:bg-primary/5 rounded-r-lg transition-colors">
+<div class="flex items-center justify-between mb-1">
+<p class="text-[10px] font-bold text-accent-yellow uppercase tracking-tighter">Tab Switched</p>
+<p class="text-[10px] text-slate-500">12:35:12</p>
+</div>
+<p class="text-xs leading-tight"><span class="font-bold">Student 112</span> switched to VS Code (Local).</p>
+</div>
+</div>
+<!-- Live Stream Summary -->
+<div class="p-4 bg-background-dark text-white border-t border-primary/20">
+<h4 class="text-xs font-bold uppercase mb-2 text-slate-400">Activity Summary</h4>
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-primary/10 p-2 rounded border border-primary/20">
+<p class="text-[10px] text-slate-400">Warnings</p>
+<p class="text-lg font-bold">24</p>
+</div>
+<div class="bg-accent-red/10 p-2 rounded border border-accent-red/20">
+<p class="text-[10px] text-slate-400">Violations</p>
+<p class="text-lg font-bold">08</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

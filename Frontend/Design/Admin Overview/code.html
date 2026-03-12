@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUTech CP Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006199",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-primary/10 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div>
+<h1 class="font-bold text-lg leading-tight">SUTech CP</h1>
+<p class="text-xs text-primary/70 font-medium">Admin Dashboard</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">exercise</span>
+<span class="text-sm font-medium">Problems</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span class="text-sm font-medium">Monitoring</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">leaderboard</span>
+<span class="text-sm font-medium">Standings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span class="text-sm font-medium">Submissions</span>
+</a>
+</nav>
+<div class="p-4 border-t border-primary/10">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-primary/5 transition-colors cursor-pointer">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-800 bg-cover" data-alt="Admin user profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOe6yXHUjiey9y9-tU0V8LieA33H3qylNl056KaNzhbAa8fssQUneLBkWJS_g_u6ktcIcVTHXYG-KPs09DlC3qHcw6hCwnSJ9MLaFDF2XsAJ7UHwdkOXBBj0F4ri5nJjE7Wun2j8CWbtvmbFlhRQqr2UFZkgufZvuCGRc2PgbuC00Ym-7W4Fa98YY6_hoK0xu43FkciWWfaW4BXEF_UmUFZO--q7tAMrioBBvYkQlHwdQeAL9PV8-eIHriUiagjmSmNKyyFfVAT3zc')"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold truncate">System Admin</p>
+<p class="text-[10px] text-slate-500 truncate">admin@sutech.edu</p>
+</div>
+<span class="material-symbols-outlined text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Bar -->
+<header class="h-16 border-b border-primary/10 bg-white dark:bg-slate-900 px-8 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-sm font-semibold">Server Status: <span class="text-green-600 dark:text-green-400">Healthy</span></span>
+</div>
+<div class="h-4 w-px bg-primary/20"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">group</span>
+<span class="text-sm text-slate-600 dark:text-slate-400 font-medium">Online Users: 142/150</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-bold transition-all shadow-sm">
+<span class="material-symbols-outlined text-sm">emergency_home</span>
+                        EMERGENCY STOP
+                    </button>
+<button class="p-2 rounded-lg bg-primary/5 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<main class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined p-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg">task_alt</span>
+<span class="text-green-500 text-xs font-bold flex items-center">+12% <span class="material-symbols-outlined text-xs">trending_up</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Solved</p>
+<p class="text-3xl font-bold mt-1">1,284</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined p-2 bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 rounded-lg">warning</span>
+<span class="text-amber-500 text-xs font-bold flex items-center">High Priority</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Warnings</p>
+<p class="text-3xl font-bold mt-1 text-amber-600">12</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined p-2 bg-primary/5 text-primary rounded-lg">timer</span>
+<span class="text-red-500 text-xs font-bold flex items-center">-00:02 <span class="material-symbols-outlined text-xs">arrow_downward</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Contest Time Remaining</p>
+<p class="text-3xl font-bold mt-1 font-mono tracking-tight">01:45:22</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Controls and Labs -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Global Controls -->
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h2 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_applications</span>
+                                Global Contest Controls
+                            </h2>
+<div class="flex flex-wrap gap-4">
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-6 bg-primary text-white font-bold rounded-lg hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">play_arrow</span>
+                                    START CONTEST
+                                </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-6 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">pause</span>
+                                    PAUSE
+                                </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-6 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-bold rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined">stop</span>
+                                    END CONTEST
+                                </button>
+</div>
+</section>
+<!-- Lab Status -->
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h2 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">router</span>
+                                Lab Connectivity Status
+                            </h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="p-4 rounded-lg bg-background-light dark:bg-slate-800 border border-primary/5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-bold">Lab 5</span>
+<span class="size-2.5 rounded-full bg-green-500"></span>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Latency: 12ms</p>
+<p class="text-xs mt-1">42 Connected</p>
+</div>
+<div class="p-4 rounded-lg bg-background-light dark:bg-slate-800 border border-primary/5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-bold">Lab 6</span>
+<span class="size-2.5 rounded-full bg-green-500"></span>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Latency: 15ms</p>
+<p class="text-xs mt-1">50 Connected</p>
+</div>
+<div class="p-4 rounded-lg bg-background-light dark:bg-slate-800 border border-primary/5 border-amber-200 dark:border-amber-900/50">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-bold">Lab 7</span>
+<span class="size-2.5 rounded-full bg-amber-500"></span>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Latency: 142ms</p>
+<p class="text-xs mt-1">38 Connected</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Alerts -->
+<div class="lg:col-span-1">
+<section class="bg-white dark:bg-slate-900 h-full rounded-xl border border-primary/10 shadow-sm flex flex-col">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500">gavel</span>
+                                    Cheating Alerts
+                                </h2>
+<span class="px-2 py-0.5 bg-red-100 text-red-600 text-[10px] font-bold rounded-full">LIVE</span>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<div class="p-3 rounded-lg bg-red-50 dark:bg-red-950/20 border-l-4 border-red-500">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span class="text-red-700 dark:text-red-400">Similarity Warning</span>
+<span class="text-slate-500">2m ago</span>
+</div>
+<p class="text-xs text-slate-700 dark:text-slate-300 mb-2">User <b>alireza_h</b> and <b>sara_m</b>: 94% code similarity on Problem C.</p>
+<button class="text-[10px] font-bold text-red-600 hover:underline uppercase tracking-tight">Investigate Case</button>
+</div>
+<div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-l-4 border-amber-500">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span class="text-amber-700 dark:text-amber-400">Multiple IPs</span>
+<span class="text-slate-500">8m ago</span>
+</div>
+<p class="text-xs text-slate-700 dark:text-slate-300 mb-2">User <b>mohammad_2001</b> logged in from 3 different IP addresses.</p>
+<button class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight">Review Sessions</button>
+</div>
+<div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-l-4 border-slate-300 dark:border-slate-600">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span class="text-slate-700 dark:text-slate-300">Clipboard Usage</span>
+<span class="text-slate-500">14m ago</span>
+</div>
+<p class="text-xs text-slate-700 dark:text-slate-300 mb-2">Suspicious paste detected for <b>fatemeh_j</b> (Problem A).</p>
+<button class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight">View Diff</button>
+</div>
+<div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-l-4 border-slate-300 dark:border-slate-600">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span class="text-slate-700 dark:text-slate-300">Clipboard Usage</span>
+<span class="text-slate-500">15m ago</span>
+</div>
+<p class="text-xs text-slate-700 dark:text-slate-300 mb-2">Suspicious paste detected for <b>reza_kh</b> (Problem B).</p>
+<button class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight">View Diff</button>
+</div>
+</div>
+<div class="p-4 border-t border-primary/10">
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                    View All Alerts Log
+                                </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,57 @@
+services:
+  mongo:
+    image: mongo:7-jammy
+    container_name: ieee-sutech-mongo
+    restart: unless-stopped
+    command: ["--bind_ip_all"]
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 25s
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: ieee-sutech-backend
+    restart: unless-stopped
+    env_file:
+      - ./Backend/.env
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+    depends_on:
+      mongo:
+        condition: service_healthy
+    volumes:
+      - backend_logs:/app/logs
+    expose:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-/api}
+    container_name: ieee-sutech-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    expose:
+      - "80"
+
+volumes:
+  mongo_data:
+  backend_logs:

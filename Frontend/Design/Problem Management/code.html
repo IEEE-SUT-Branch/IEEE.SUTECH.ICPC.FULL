@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUTech Admin - Problem Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006199",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden md:flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">SUTech Admin</h2>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-medium">Problems</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-medium">Submissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary overflow-hidden">
+<img alt="Admin" data-alt="User profile avatar of admin user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqjuMAVYOH_Ep6ymKuG8AKTCWHkXAZBnw-yGcZU5xGt94O8BYDfnYBqOK5QuFXgvod6M1c-1xDYHLTkVpZJY-vdmtAsG-W6EDQOskrcC27vMHuCMHEVNLnJf0MOpeD9Yv0xNrm-z-Y_IwHXMk3iYPsyINrRb8R2Ve7ITKMbCwHtCrPCkZEB9D-k4nFZKcGxAlIqr47t7geGhNL0UD1uoWZsn-gpJejw8ID4w_UxhYPZzWyORc8MPmEKfq7Ds4xexRV_Xri7Ik0IYRi"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">System Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="Search problems, IDs, or tags..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-8">
+<!-- Page Title & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-bold tracking-tight">Problem Management</h1>
+<p class="text-slate-500 mt-1">Manage the competitive programming question bank</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold flex items-center justify-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined">add</span>
+                        Add Problem
+                    </button>
+</div>
+<!-- Filters & Tabs -->
+<div class="flex items-center gap-6 border-b border-slate-200 dark:border-slate-800 mb-6">
+<button class="pb-4 text-primary font-bold border-b-2 border-primary">All Problems</button>
+<button class="pb-4 text-slate-500 font-medium hover:text-slate-700">Published</button>
+<button class="pb-4 text-slate-500 font-medium hover:text-slate-700">Drafts</button>
+<button class="pb-4 text-slate-500 font-medium hover:text-slate-700">Archived</button>
+</div>
+<!-- Table Container -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Title</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Difficulty</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Time Limit</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Memory Limit</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-500 tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<!-- Problem A -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 size-6 flex items-center justify-center rounded">A</span>
+<span class="font-medium">Sum of All Fears</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">Easy</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">1.0s</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">256MB</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-600 dark:text-blue-400">
+<span class="size-2 rounded-full bg-blue-600"></span>
+                                            Published
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-slate-400 hover:text-red-500 p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Problem B -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 size-6 flex items-center justify-center rounded">B</span>
+<span class="font-medium">Binary Search Mastery</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">Medium</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">2.0s</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">512MB</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-600 dark:text-blue-400">
+<span class="size-2 rounded-full bg-blue-600"></span>
+                                            Published
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-slate-400 hover:text-red-500 p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Problem C -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 size-6 flex items-center justify-center rounded">C</span>
+<span class="font-medium">Graph Traversal Patterns</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">Medium</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">1.5s</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">256MB</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
+<span class="size-2 rounded-full bg-slate-400"></span>
+                                            Draft
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-slate-400 hover:text-red-500 p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Problem D -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 size-6 flex items-center justify-center rounded">D</span>
+<span class="font-medium">Matrix Chain Multiplication</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-400">Hard</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">3.0s</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">1024MB</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-600 dark:text-blue-400">
+<span class="size-2 rounded-full bg-blue-600"></span>
+                                            Published
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-slate-400 hover:text-red-500 p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Problem E -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors border-b-0">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 size-6 flex items-center justify-center rounded">E</span>
+<span class="font-medium">Segment Tree Queries</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-400">Hard</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">2.5s</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">512MB</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
+<span class="size-2 rounded-full bg-slate-400"></span>
+                                            Draft
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-slate-400 hover:text-red-500 p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Problem Detail / Modal Concept Overlay -->
+<div class="mt-12">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<h3 class="text-xl font-bold">Edit Problem: Sum of All Fears</h3>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Discard</button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">Save Changes</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 dark:divide-slate-800">
+<!-- Left: Content Editor -->
+<div class="lg:col-span-2 p-8 space-y-6">
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Problem Statement (Markdown)</label>
+<div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<div class="flex items-center gap-2 px-3 py-2 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-400"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-400"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-400"><span class="material-symbols-outlined text-sm">code</span></button>
+<div class="w-px h-4 bg-slate-300 dark:bg-slate-600 mx-1"></div>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-400"><span class="material-symbols-outlined text-sm">image</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-400"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="w-full p-4 bg-transparent border-none focus:ring-0 font-mono text-sm resize-none" placeholder="Enter problem description in markdown..." rows="12">## Description
+Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
+
+### Example 1
+**Input:** nums = [2,7,11,15], target = 9
+**Output:** [0,1]</textarea>
+</div>
+</div>
+<!-- Test Cases -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Test Cases</label>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                                            Add New Test Case
+                                        </button>
+</div>
+<div class="space-y-4">
+<!-- Test Case 1 -->
+<div class="p-4 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Test Case #1</span>
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Sample Viewable</span>
+</label>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="text-[10px] font-bold text-slate-400 block mb-1">INPUT</span>
+<textarea class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded p-2 text-xs font-mono" rows="2">4 9
+2 7 11 15</textarea>
+</div>
+<div>
+<span class="text-[10px] font-bold text-slate-400 block mb-1">OUTPUT</span>
+<textarea class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded p-2 text-xs font-mono" rows="2">0 1</textarea>
+</div>
+</div>
+</div>
+<!-- Test Case 2 -->
+<div class="p-4 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Test Case #2</span>
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Sample Viewable</span>
+</label>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="text-[10px] font-bold text-slate-400 block mb-1">INPUT</span>
+<textarea class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded p-2 text-xs font-mono" rows="2">3 6
+3 2 4</textarea>
+</div>
+<div>
+<span class="text-[10px] font-bold text-slate-400 block mb-1">OUTPUT</span>
+<textarea class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded p-2 text-xs font-mono" rows="2">1 2</textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Meta Settings -->
+<div class="p-8 space-y-6 bg-slate-50/30 dark:bg-slate-800/10">
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Problem Metadata</label>
+<div class="space-y-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Difficulty</p>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 text-sm">
+<option>Easy</option>
+<option selected="">Medium</option>
+<option>Hard</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Time Limit (ms)</p>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 text-sm" type="number" value="1000"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Memory Limit (MB)</p>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 text-sm" type="number" value="256"/>
+</div>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Tags</p>
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded flex items-center gap-1">ARRAY <span class="material-symbols-outlined text-[10px] cursor-pointer">close</span></span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded flex items-center gap-1">HASH TABLE <span class="material-symbols-outlined text-[10px] cursor-pointer">close</span></span>
+</div>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 text-sm" placeholder="Add tag..." type="text"/>
+</div>
+</div>
+</div>
+<hr class="border-slate-200 dark:border-slate-800"/>
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-4">Visibility &amp; Status</label>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium">Published</p>
+<p class="text-xs text-slate-500">Live for all students</p>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary cursor-pointer">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium">Hide from Search</p>
+<p class="text-xs text-slate-500">Direct link only access</p>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer">
+<span class="translate-x-1 inline-block h-4 w-4 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<div class="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-amber-600 dark:text-amber-400 text-lg">info</span>
+<p class="text-xs text-amber-800 dark:text-amber-300 font-medium">Changing difficulty after publication may affect student score calculations.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

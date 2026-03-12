@@ -1,0 +1,22 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>The Fast Coder</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">The Fast Coder</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P>Rami is practicing for the placement test. There are $$$N$$$ practice problems arranged in a straight line. Solving the $$$i$$$-th problem takes exactly $$$T_i$$$ minutes. Rami has only $$$M$$$ minutes of free time. Because Rami is systematic, he wants to choose a contiguous subsegment of problems to solve (i.e., problems from index $$$L$$$ to index $$$R$$$). What is the maximum number of problems Rami can solve within his $$$M$$$ minutes?</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>The first line contains two integers $$$N$$$ and $$$M$$$ ($$$1 \le N \le 10^5$$$, $$$1 \le M \le 10^9$$$). The second line contains $$$N$$$ integers $$$T_1, T_2, \dots, T_N$$$ ($$$1 \le T_i \le 10^4$$$).</P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>Print the maximum number of contiguous problems Rami can solve.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Example</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="5 15
+4 2 8 3 5
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">5 15</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">4 2 8 3 5</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+3
+</PRE></DIV></DIV></DIV><P></P><P></P><DIV class="note"><DIV class="section-title">Note</DIV><P></P><P>This is a classic Sliding Window / Two Pointers problem. Maintain a window [L, R] and a current sum. If the sum exceeds $$$M$$$, increment $$$L$$$. Record the maximum length $$$R - L + 1$$$. Time Complexity $$$O(N)$$$.</P></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>
